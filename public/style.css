@@ -1,0 +1,22 @@
+* {
+  margin: "auto";
+  padding: "auto";
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "Roboto Slab", serif;
+}
+
+.style {
+  display: flex;
+  justify-content: center;
+}
+
+.typography {
+  font-family: "Roboto Slab", serif;
+}
+
+.video {
+  border-radius: "50%";
+}
