@@ -18,5 +18,9 @@ body {
 }
 
 .video {
-  border-radius: "50%";
+  border-radius: 10;
+}
+
+.image .image {
+  border-radius: 10;
 }

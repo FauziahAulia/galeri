@@ -12,8 +12,12 @@ export default function Galeri() {
       >
         <Box sx={{ flexGrow: 1, width: "100%", ml: 2 }}>
           <IconButton sx={{ color: "#fff" }}>
-            <ArrowBackIosNewIcon style={{ fontSize: 15 }} />
-            <Typography className="typography" style={{ fontSize: 15 }}>
+            <ArrowBackIosNewIcon style={{ fontSize: 20 }} />
+            <Typography
+              className="typography"
+              sx={{ ml: 1 }}
+              style={{ fontSize: 20 }}
+            >
               <b>Galeri</b>
             </Typography>
           </IconButton>

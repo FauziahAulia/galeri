@@ -63,6 +63,7 @@ export default function FullWidthTabs() {
   return (
     <Container align="center" sx={{ pt: 2 }}>
       <Box sx={{ bgcolor: "grey", width: 350 }}>
+        {/* tabs atas  */}
         <Tabs
           value={value}
           onChange={handleChange}
@@ -80,6 +81,7 @@ export default function FullWidthTabs() {
           index={value}
           onChangeIndex={handleChangeIndex}
         >
+          {/* Tabs for Foto */}
           <TabPanel value={value} index={0} dir={theme.direction}>
             <ImageList sx={{ width: 350, height: 600 }}>
               <ImageListItem key="Subheader" cols={2}></ImageListItem>
@@ -90,6 +92,14 @@ export default function FullWidthTabs() {
                     srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                     alt={item.title}
                     loading="lazy"
+                    style={{
+                      //Below lines will help to set the border radius
+                      borderBottomLeftRadius: 10,
+                      borderBottomRightRadius: 10,
+                      borderTopRightRadius: 10,
+                      borderTopLeftRadius: 10,
+                      overflow: "hidden",
+                    }}
                   />
                   <ImageListItemBar
                     title={item.title}
@@ -101,11 +111,18 @@ export default function FullWidthTabs() {
                         style={{}}
                       ></IconButton>
                     }
+                    style={{
+                      //border radius style
+                      borderBottomLeftRadius: 10,
+                      borderBottomRightRadius: 10,
+                      overflow: "hidden",
+                    }}
                   />
                 </ImageListItem>
               ))}
             </ImageList>
           </TabPanel>
+          {/* Tabs for video */}
           <TabPanel value={value} index={1} dir={theme.direction}>
             <Grid container spacing={2} sx={{ mt: 2 }} style={{ border: 1 }}>
               <Grid item>
@@ -115,6 +132,14 @@ export default function FullWidthTabs() {
                     width="350px"
                     height="128px"
                     url="https://www.youtube.com/watch?v=LXPgexcXi5w&t=55s"
+                    style={{
+                      //border radius style
+                      borderBottomLeftRadius: 15,
+                      borderBottomRightRadius: 15,
+                      borderTopRightRadius: 15,
+                      borderTopLeftRadius: 15,
+                      overflow: "hidden",
+                    }}
                   />
                 </ButtonBase>
               </Grid>
@@ -136,12 +161,21 @@ export default function FullWidthTabs() {
             <Grid container spacing={2} style={{ border: 1 }}>
               <Grid item>
                 <ButtonBase align="center" sx={{ width: 350, height: 128 }}>
+                  {/* for reactplayer */}
                   <ReactPlayer
                     className="video"
                     width="350px"
                     height="128px"
                     borderRadius="50px"
                     url="https://www.youtube.com/watch?v=LXPgexcXi5w&t=55s"
+                    style={{
+                      //border radius style
+                      borderBottomLeftRadius: 15,
+                      borderBottomRightRadius: 15,
+                      borderTopRightRadius: 15,
+                      borderTopLeftRadius: 15,
+                      overflow: "hidden",
+                    }}
                   />
                 </ButtonBase>
               </Grid>
@@ -172,6 +206,14 @@ export default function FullWidthTabs() {
                     width="350px"
                     height="128px"
                     url="https://www.youtube.com/watch?v=LXPgexcXi5w&t=55s"
+                    style={{
+                      //Below lines will help to set the border radius
+                      borderBottomLeftRadius: 15,
+                      borderBottomRightRadius: 15,
+                      borderTopRightRadius: 15,
+                      borderTopLeftRadius: 15,
+                      overflow: "hidden",
+                    }}
                   />
                 </ButtonBase>
               </Grid>
