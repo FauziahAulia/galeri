@@ -2,18 +2,28 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
-import IconButton from "@mui/material/IconButton";
-import Grid from "@mui/material/Grid";
-import ButtonBase from "@mui/material/ButtonBase";
+// component Material-UI
+import {
+  Tabs,
+  Tab,
+  Typography,
+  Container,
+  Box,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  Grid,
+  ButtonBase,
+  IconButton,
+} from "@mui/material";
+//import font roboto
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 import ReactPlayer from "react-player";
+// dataImage import
+import dataImage from "./TabsImage";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -76,6 +86,7 @@ export default function FullWidthTabs() {
           <Tab label="Foto" {...a11yProps(0)} />
           <Tab label="Video" {...a11yProps(1)} />
         </Tabs>
+
         <SwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={value}
@@ -85,7 +96,7 @@ export default function FullWidthTabs() {
           <TabPanel value={value} index={0} dir={theme.direction}>
             <ImageList sx={{ width: 350, height: 600 }}>
               <ImageListItem key="Subheader" cols={2}></ImageListItem>
-              {itemData.map((item) => (
+              {dataImage.map((item) => (
                 <ImageListItem key={item.img}>
                   <img
                     src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -93,7 +104,7 @@ export default function FullWidthTabs() {
                     alt={item.title}
                     loading="lazy"
                     style={{
-                      //Below lines will help to set the border radius
+                      //border radius style
                       borderBottomLeftRadius: 10,
                       borderBottomRightRadius: 10,
                       borderTopRightRadius: 10,
@@ -122,6 +133,7 @@ export default function FullWidthTabs() {
               ))}
             </ImageList>
           </TabPanel>
+
           {/* Tabs for video */}
           <TabPanel value={value} index={1} dir={theme.direction}>
             <Grid container spacing={2} sx={{ mt: 2 }} style={{ border: 1 }}>
@@ -131,7 +143,7 @@ export default function FullWidthTabs() {
                     className="video"
                     width="350px"
                     height="128px"
-                    url="https://www.youtube.com/watch?v=LXPgexcXi5w&t=55s"
+                    url="https://www.youtube.com/watch?v=sgN7fUGPgMM"
                     style={{
                       //border radius style
                       borderBottomLeftRadius: 15,
@@ -151,8 +163,10 @@ export default function FullWidthTabs() {
                       variant="subtitle1"
                       component="div"
                       align="center"
+                      style={{ fontSize: 12, fontWeight: "bold" }}
                     >
-                      Video
+                      Karate Female Team Kata Bronze Medal - Serbia vs Italy -
+                      WKF World Championships Belgrade 2010 (1/2)
                     </Typography>
                   </Grid>
                 </Grid>
@@ -167,7 +181,7 @@ export default function FullWidthTabs() {
                     width="350px"
                     height="128px"
                     borderRadius="50px"
-                    url="https://www.youtube.com/watch?v=LXPgexcXi5w&t=55s"
+                    url="https://www.youtube.com/watch?v=xhTlO-rbJ4s"
                     style={{
                       //border radius style
                       borderBottomLeftRadius: 15,
@@ -187,8 +201,10 @@ export default function FullWidthTabs() {
                       variant="subtitle1"
                       component="div"
                       align="center"
+                      style={{ fontSize: 12, fontWeight: "bold" }}
                     >
-                      Video
+                      Full Match Karate Putri Vietnam vs Indonesia Asian Games
+                      2018
                     </Typography>
                   </Grid>
                 </Grid>
@@ -205,7 +221,7 @@ export default function FullWidthTabs() {
                     className="video"
                     width="350px"
                     height="128px"
-                    url="https://www.youtube.com/watch?v=LXPgexcXi5w&t=55s"
+                    url="https://www.youtube.com/watch?v=8kd7JHA6tnI"
                     style={{
                       //Below lines will help to set the border radius
                       borderBottomLeftRadius: 15,
@@ -225,8 +241,10 @@ export default function FullWidthTabs() {
                       variant="subtitle1"
                       component="div"
                       align="center"
+                      style={{ fontSize: 12, fontWeight: "bold" }}
                     >
-                      Video
+                      平成２７年
+                      第１５回全日本少年少女空手道選手権大会・３年女子形　決勝戦
                     </Typography>
                   </Grid>
                 </Grid>
@@ -238,65 +256,3 @@ export default function FullWidthTabs() {
     </Container>
   );
 }
-
-const itemData = [
-  {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Beautiful Image from Unsplash",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Beautiful Image from Unsplash",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Beautiful Image from Unsplash",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Beautiful Image from Unsplash",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Beautiful Image from Unsplash",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Beautiful Image from Unsplash",
-    rows: 2,
-    cols: 2,
-    featured: true,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Beautiful Image from Unsplash",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Beautiful Image from Unsplash",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Beautiful Image from Unsplash",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Beautiful Image from Unsplash",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Beautiful Image from Unsplash",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Beautiful Image from Unsplash",
-    cols: 2,
-  },
-];

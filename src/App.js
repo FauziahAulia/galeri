@@ -1,11 +1,11 @@
 import * as React from "react";
-import Galeri from "./component/Galeri";
+import Navbar from "./component/Navbar";
 import Tabs from "./component/Tabs";
 
 function App(props) {
   return (
     <div className="App">
-      <Galeri />
+      <Navbar />
       <br />
       <Tabs />
     </div>
