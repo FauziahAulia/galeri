@@ -75,7 +75,7 @@ export default function FullWidthTabs() {
   };
 
   return (
-    <Container align="center" md={12} xs={6} sx={{ pt: 2 }}>
+    <Container align="center" sx={{ pt: 2 }}>
       <Box sx={{ bgcolor: "grey", width: 350 }}>
         {/* tabs atas  */}
         <Tabs
@@ -160,7 +160,7 @@ export default function FullWidthTabs() {
             <Grid
               container
               spacing={2}
-              sx={{ width: 350, height: 600, mt: -1 }}
+              sx={{ width: 350, height: 600, mt: -2 }}
               style={{ border: 1 }}
             >
               <Grid item>
@@ -172,6 +172,8 @@ export default function FullWidthTabs() {
                   >
                     <video
                       // autoPlay="true"
+                      controls
+                      type="video/mp4"
                       className="video"
                       src={`${item.video}`}
                       srcSet={`${item.video}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -199,11 +201,11 @@ export default function FullWidthTabs() {
                         //border radius style
                         fontSize: 6,
                         fontWeight: "bold",
-                        borderBottomLeftRadius: 10,
-                        borderBottomRightRadius: 10,
+                        borderTopLeftRadius: 10,
+                        borderTopRightRadius: 10,
                         overflow: "hidden",
                       }}
-                      sx={{ width: 320, height: 48, mb: -4 }}
+                      sx={{ width: 320, height: 38, mb: 14 }}
                     />
                   </ButtonBase>
                 ))}
