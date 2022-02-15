@@ -21,11 +21,10 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-// import ReactPlayer from "react-player";
 // dataImage import
-import dataImage from "./TabsImage";
+import dataImage from "../component/TabsImage";
 // dataVideo import
-import dataVideo from "./TabsVideo";
+import dataVideo from "../component/TabsVideo";
 // import react skeleton
 import Skeleton from "@mui/material/Skeleton";
 
@@ -66,7 +65,7 @@ export default function FullWidthTabs() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (newValue) => {
     setValue(newValue);
   };
 
@@ -160,7 +159,7 @@ export default function FullWidthTabs() {
             <Grid
               container
               spacing={2}
-              sx={{ width: 350, height: 600, mt: -2 }}
+              sx={{ width: 340, height: 600, mt: -5 }}
               style={{ border: 1 }}
             >
               <Grid item>

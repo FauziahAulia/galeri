@@ -1,6 +1,6 @@
 import * as React from "react";
-import Navbar from "./component/Navbar";
-import Tabs from "./component/Tabs";
+import Navbar from "./pages/Navbar";
+import Tabs from "./pages/Tabs";
 
 function App(props) {
   return (
