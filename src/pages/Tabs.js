@@ -3,30 +3,18 @@ import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 // component Material-UI
-import {
-  Tabs,
-  Tab,
-  Typography,
-  Container,
-  Box,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  IconButton,
-  Grid,
-  ButtonBase,
-} from "@mui/material";
+import { Tabs, Tab, Typography, Container, Box } from "@mui/material";
 //import font roboto
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 // dataImage import
-import dataImage from "../component/TabsImage";
+import IsiImage from "../component/IsiImage";
 // dataVideo import
-import dataVideo from "../component/TabsVideo";
+import IsiVideo from "../component/IsiVideo";
 // import react skeleton
-import Skeleton from "@mui/material/Skeleton";
+// import Skeleton from "@mui/material/Skeleton";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,7 +28,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: "auto", bgColor: "#249EA0" }}>
+        <Box sx={{ p: "auto" }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -75,7 +63,7 @@ export default function FullWidthTabs() {
 
   return (
     <Container align="center" sx={{ pt: 2 }}>
-      <Box sx={{ bgcolor: "grey", width: 350 }}>
+      <Box position="static" sx={{ bgcolor: "grey", width: 350 }}>
         {/* tabs atas  */}
         <Tabs
           value={value}
@@ -97,119 +85,12 @@ export default function FullWidthTabs() {
         >
           {/* Tabs for Foto */}
           <TabPanel value={value} index={0} dir={theme.direction}>
-            <ImageList sx={{ width: 350, height: 600 }}>
-              <ImageListItem key="Subheader" cols={2}></ImageListItem>
-              {dataImage.map((item) => (
-                <ImageListItem key={item.img}>
-                  {/* <Skeleton
-                    sx={{ bgcolor: "grey.350" }}
-                    variant="rectangular"
-                    width={173}
-                    height={118}
-                    style={{
-                      //border radius style
-                      borderBottomLeftRadius: 10,
-                      borderBottomRightRadius: 10,
-                      borderTopRightRadius: 10,
-                      borderTopLeftRadius: 10,
-                      overflow: "hidden",
-                    }}
-                  > */}
-                  <img
-                    src={`${item.img}`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    loading="lazy"
-                    style={{
-                      //border radius style
-                      borderBottomLeftRadius: 10,
-                      borderBottomRightRadius: 10,
-                      borderTopRightRadius: 10,
-                      borderTopLeftRadius: 10,
-                      overflow: "hidden",
-                    }}
-                  />
-                  {/* </Skeleton> */}
-                  <ImageListItemBar
-                    title={item.title}
-                    subtitle={item.author}
-                    actionIcon={
-                      <IconButton
-                        sx={{ color: "#F78104" }}
-                        aria-label={`info about ${item.title}`}
-                        style={{}}
-                      ></IconButton>
-                    }
-                    style={{
-                      //border radius style
-                      fontSize: 9,
-                      fontWeight: "bold",
-                      borderBottomLeftRadius: 10,
-                      borderBottomRightRadius: 10,
-                      overflow: "hidden",
-                    }}
-                  />
-                </ImageListItem>
-              ))}
-            </ImageList>
+            <IsiImage />
           </TabPanel>
 
           {/* Tabs for video */}
           <TabPanel value={value} index={1} dir={theme.direction}>
-            <Grid
-              container
-              spacing={2}
-              sx={{ width: 340, height: 600, mt: -5 }}
-              style={{ border: 1 }}
-            >
-              <Grid item>
-                {dataVideo.map((item) => (
-                  <ButtonBase
-                    align="center"
-                    sx={{ width: 320, height: 118, mt: 10 }}
-                    key={item.video}
-                  >
-                    <video
-                      // autoPlay="true"
-                      controls
-                      type="video/mp4"
-                      className="video"
-                      src={`${item.video}`}
-                      srcSet={`${item.video}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                      alt={item.title}
-                      style={{
-                        //border radius style
-                        borderBottomLeftRadius: 10,
-                        borderBottomRightRadius: 10,
-                        borderTopRightRadius: 10,
-                        borderTopLeftRadius: 10,
-                        overflow: "hidden",
-                      }}
-                    />
-                    <ImageListItemBar
-                      title={item.title}
-                      subtitle={item.author}
-                      actionIcon={
-                        <IconButton
-                          sx={{ color: "#F78104" }}
-                          aria-label={`info about ${item.title}`}
-                          style={{}}
-                        ></IconButton>
-                      }
-                      style={{
-                        //border radius style
-                        fontSize: 6,
-                        fontWeight: "bold",
-                        borderTopLeftRadius: 10,
-                        borderTopRightRadius: 10,
-                        overflow: "hidden",
-                      }}
-                      sx={{ width: 320, height: 38, mb: 14 }}
-                    />
-                  </ButtonBase>
-                ))}
-              </Grid>
-            </Grid>
+            <IsiVideo />
           </TabPanel>
         </SwipeableViews>
       </Box>

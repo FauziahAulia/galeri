@@ -16,11 +16,3 @@ body {
 .typography {
   font-family: "Roboto Slab", serif;
 }
-
-.video {
-  border-radius: 10;
-}
-
-.image .image {
-  border-radius: 10;
-}

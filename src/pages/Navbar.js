@@ -6,7 +6,7 @@ export default function Galeri() {
   return (
     <div>
       <AppBar
-        elevation="none"
+        // elevation="none"
         position="fixed"
         sx={{ xs: 3, bgcolor: "#249EA0", width: "100%" }}
       >
