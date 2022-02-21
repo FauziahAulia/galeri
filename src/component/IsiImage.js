@@ -14,29 +14,31 @@ import "@fontsource/roboto/700.css";
 // import dataImage
 import dataImage from "./TabsImage";
 
-function IsiImage(props) {
+function srcset(image, size, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+  };
+}
+
+export default function IsiImage() {
   return (
-    <ImageList sx={{ width: 350, height: 600 }}>
-      <ImageListItem key="Subheader" cols={2}></ImageListItem>
+    <ImageList
+      sx={{ width: 360, height: 600 }}
+      variant="quilted"
+      cols={4}
+      rowHeight={121}
+    >
       {dataImage.map((item) => (
-        <ImageListItem key={item.img}>
-          {/* <Skeleton
-      sx={{ bgcolor: "grey.350" }}
-      variant="rectangular"
-      width={173}
-      height={118}
-      style={{
-        //border radius style
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
-        borderTopRightRadius: 10,
-        borderTopLeftRadius: 10,
-        overflow: "hidden",
-      }}
-    > */}
+        <ImageListItem
+          key={item.img}
+          cols={item.cols || 1}
+          rows={item.rows || 1}
+        >
           <img
-            src={`${item.img}`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+            {...srcset(item.img, 121, item.rows, item.cols)}
             alt={item.title}
             loading="lazy"
             style={{
@@ -48,7 +50,6 @@ function IsiImage(props) {
               overflow: "hidden",
             }}
           />
-          {/* </Skeleton> */}
           <ImageListItemBar
             title={item.title}
             subtitle={item.author}
@@ -62,7 +63,7 @@ function IsiImage(props) {
             style={{
               //border radius style
               fontSize: 9,
-              fontWeight: "bold",
+              fontWeight: "normal",
               borderBottomLeftRadius: 10,
               borderBottomRightRadius: 10,
               overflow: "hidden",
@@ -73,5 +74,3 @@ function IsiImage(props) {
     </ImageList>
   );
 }
-
-export default IsiImage;

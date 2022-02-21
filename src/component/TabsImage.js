@@ -4,7 +4,6 @@ const dataImage = [
     title: "White Kimono Standing",
     rows: 2,
     cols: 2,
-    featured: true,
   },
   {
     img: require("../Image/img2.jpg"),
@@ -29,7 +28,6 @@ const dataImage = [
     title: "Meditation Before Karate Training",
     rows: 2,
     cols: 2,
-    featured: true,
   },
   {
     img: require("../Image/img7.jpg"),

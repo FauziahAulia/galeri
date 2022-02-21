@@ -16,9 +16,9 @@ export default function Galeri() {
             <Typography
               className="typography"
               sx={{ ml: 1 }}
-              style={{ fontSize: 20 }}
+              style={{ fontSize: 20, fontWeight: "normal" }}
             >
-              <b>Galeri</b>
+              Galeri
             </Typography>
           </IconButton>
         </Box>

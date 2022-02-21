@@ -53,8 +53,8 @@ function IsiVideo(props) {
               }
               style={{
                 //border radius style
-                fontSize: 6,
-                fontWeight: "bold",
+                fontSize: 3,
+                fontWeight: "normal",
                 borderTopLeftRadius: 10,
                 borderTopRightRadius: 10,
                 overflow: "hidden",
