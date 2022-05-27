@@ -9,9 +9,9 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 // dataImage import
-import IsiImage from "../component/IsiImage";
+import IsiImage from "../pages/IsiImage";
 // dataVideo import
-import IsiVideo from "../component/IsiVideo";
+import IsiVideo from "../pages/IsiVideo";
 // import react skeleton
 // import Skeleton from "@mui/material/Skeleton";
 
